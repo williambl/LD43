@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Resource {
 
     string name;
@@ -14,5 +16,6 @@ public class Resource {
 
     public void Update () {
         amount += amountPerSecond;
+        Debug.Log(name + ": " + amount);
     }
 }

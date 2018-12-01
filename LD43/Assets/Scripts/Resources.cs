@@ -5,6 +5,7 @@ public class Resources {
     public List<Resource> resourceList;
 
     public Resources() {
+        resourceList = new List<Resource>();
         AddResources();
     }
 
@@ -12,5 +13,9 @@ public class Resources {
         resourceList.Add(new Resource("Food", 50, 1));
     }
 
-    public void Update() {}
+    public void Update() {
+        foreach (Resource resource in resourceList) {
+            resource.Update();
+        }
+    }
 }
