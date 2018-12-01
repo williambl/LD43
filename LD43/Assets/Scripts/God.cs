@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class God {
 
     string name;
@@ -16,6 +18,16 @@ public class God {
         this.happinessPerSecond = happinessPerSecond;
         this.wrathModifier = wrathModifier;
         this.wrathCutoff = wrathCutoff;
+    }
+
+    void Update() {
+        happiness += happinessPerSecond;
+
+        if (happiness < wrathCutoff && Random.value < wrathModifier) {
+            role.BadAction();
+        } else if (happiness > wrathCutoff && Random.value > wrathModifier) {
+            role.GoodAction();
+        }
     }
 
 }
