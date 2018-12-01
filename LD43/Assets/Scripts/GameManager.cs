@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour {
     People people;
     Enemies enemies;
 
+    public static GameManager manager;
+
     void Awake () {
+        manager = this;
+
         gods = new Gods();
         resources = new Resources();
         people = new People();
