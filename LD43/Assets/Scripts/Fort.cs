@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class People {
+public class Fort {
 
     public float happiness;
     public int amountOfPeople;
@@ -8,7 +8,7 @@ public class People {
     float happinessPerSecond;
     int secondsPerPeople;
 
-    public People() {
+    public Fort() {
         happiness = 0.5f;
         amountOfPeople = 500;
         happinessPerSecond = -0.01f;

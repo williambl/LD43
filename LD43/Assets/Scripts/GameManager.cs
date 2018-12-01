@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
     Gods gods;
     Resources resources;
-    People people;
+    Fort fort;
     Enemies enemies;
 
     public static GameManager manager;
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 
         gods = new Gods();
         resources = new Resources();
-        people = new People();
+        fort = new Fort();
         enemies = new Enemies();
         StartCoroutine(UpdateAllThings());
     }
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
         while (true) {
             yield return new WaitForSeconds(1.0f);
             resources.Update();
-            people.Update();
+            fort.Update();
             gods.Update();
             enemies.Update();
         }
