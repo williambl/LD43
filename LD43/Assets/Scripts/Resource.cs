@@ -1,11 +1,18 @@
-﻿public class Resource {
+public class Resource {
 
     string name;
 
     int amount;
+
+    int amountPerSecond;
     
-    public Resource(string name, int amount) {
+    public Resource(string name, int amount, int amountPerSecond) {
         this.name = name;
         this.amount = amount;
+        this.amountPerSecond = amountPerSecond;
+    }
+
+    public void Update () {
+        amount += amountPerSecond;
     }
 }
