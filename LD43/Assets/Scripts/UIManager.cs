@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour {
     public GameObject numberPrefab;
     public Transform canvasTransform;
 
+    int lastPosition = 0;
+
     public static UIManager manager;
 
     void Awake () {
@@ -14,7 +16,11 @@ public class UIManager : MonoBehaviour {
     }
 
     public GameObject GetUIText() {
-        return Instantiate(numberPrefab, canvasTransform);
+        var gObject = Instantiate(numberPrefab, canvasTransform);
+        lastPosition -= 50;
+        gObject.transform.position -= Vector3.down * lastPosition;
+
+        return gObject;
     }
 
 }

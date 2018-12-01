@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour {
 
     void Awake () {
         manager = this;
+    }
 
+    void Start () {
         gods = new Gods();
         resources = new Resources();
         fort = new Fort();
