@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public class Gods {
 
     public List<God> godList;
