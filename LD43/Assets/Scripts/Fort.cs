@@ -5,12 +5,15 @@ public class Fort {
     public float happiness;
     public int amountOfPeople;
 
+    public float health;
+
     float happinessPerSecond;
     int secondsPerPeople;
 
     public Fort() {
         happiness = 0.5f;
         amountOfPeople = 500;
+        health = 1.0f;
         happinessPerSecond = -0.01f;
         secondsPerPeople = 5;
     }
@@ -23,5 +26,6 @@ public class Fort {
 
         Debug.Log("Happiness: " + happiness);
         Debug.Log("People: " + amountOfPeople);
+        Debug.Log("Health: " + health);
     }
 }
