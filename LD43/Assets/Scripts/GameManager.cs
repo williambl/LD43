@@ -14,16 +14,16 @@ public class GameManager : MonoBehaviour {
         resources = new Resources();
         people = new People();
         enemies = new Enemies();
-        StartCoroutine(UpdateAllThings);
+        StartCoroutine(UpdateAllThings());
     }
 
     IEnumerator UpdateAllThings () {
         while (true) {
             yield return new WaitForSeconds(1.0f);
             resources.Update();
-            People.Update();
-            Gods.Update();
-            Enemies.Update();
+            people.Update();
+            gods.Update();
+            enemies.Update();
         }
     }
 

@@ -8,4 +8,8 @@ public class Gods {
     public Gods() {
     
     }
+
+    void AddGods() {}
+
+    public void Update() {}
 }

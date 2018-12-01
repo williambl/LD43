@@ -6,9 +6,9 @@ public class People {
     float happinessPerSecond;
 
     public People() {
-        happiness = 0.5;
+        happiness = 0.5f;
         amountOfPeople = 500;
-        happinessPerSecond = -0.01;
+        happinessPerSecond = -0.01f;
     }
 
     public void Update() {

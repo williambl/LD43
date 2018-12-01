@@ -11,4 +11,6 @@ public class Resources {
     void AddResources() {
         resourceList.Add(new Resource("Food", 50, 1));
     }
+
+    public void Update() {}
 }
