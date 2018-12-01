@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    Gods gods;
-    Resources resources;
-    Fort fort;
-    Enemies enemies;
+    public Gods gods;
+    public Resources resources;
+    public Fort fort;
+    public Enemies enemies;
 
     public static GameManager manager;
 

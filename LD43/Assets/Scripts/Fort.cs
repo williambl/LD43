@@ -28,4 +28,11 @@ public class Fort {
         Debug.Log("People: " + amountOfPeople);
         Debug.Log("Health: " + health);
     }
+
+    public void DoDamage(float damage) {
+        if (damage > 20)
+            amountOfPeople -= Random.Range(1, 75);
+        
+        health -= damage/(GameManager.manager.enemies.damageBase + 50);
+    }
 }

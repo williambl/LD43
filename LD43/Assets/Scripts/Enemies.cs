@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemies {
 
-    float damageBase;
+    public float damageBase;
     float cooldownBase;
 
     float nextTime;
@@ -18,5 +18,7 @@ public class Enemies {
         nextTime = Time.time + cooldownBase + Random.Range(1, 25);
 
         float damage = damageBase + Random.Range(1,20);
+
+        GameManager.manager.fort.DoDamage(damage);
     }
 }
