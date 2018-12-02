@@ -9,17 +9,17 @@ public class Resource {
 
     int amountPerSecond;
 
-    Text uiText;
+    NumberUIElement uiElement;
     
     public Resource(string name, int amount, int amountPerSecond) {
         this.name = name;
         this.amount = amount;
         this.amountPerSecond = amountPerSecond;
-        uiText = UIManager.manager.GetUIText().GetComponent<Text>();
+        uiElement = UIManager.manager.GetUIText().GetComponent<NumberUIElement>();
     }
 
     public void Update () {
         amount += amountPerSecond;
-        uiText.text = name + ": " + amount;
+        uiElement.ChangeLabel(name + ": " + amount);
     }
 }

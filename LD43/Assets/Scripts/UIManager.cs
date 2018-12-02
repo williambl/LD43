@@ -5,6 +5,8 @@ using UnityEngine;
 public class UIManager : MonoBehaviour {
 
     public GameObject numberPrefab;
+    public GameObject godPrefab;
+
     public Transform canvasTransform;
 
     int lastPosition = 0;
@@ -23,4 +25,11 @@ public class UIManager : MonoBehaviour {
         return gObject;
     }
 
+    public GodUIElement CreateGodUIElement() {
+        var gObject = Instantiate(godPrefab, canvasTransform);
+        lastPosition -= 50;
+        gObject.transform.position -= Vector3.down * lastPosition;
+
+        return gObject.GetComponent<GodUIElement>();
+    }
 }

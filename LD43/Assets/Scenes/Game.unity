@@ -437,4 +437,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberPrefab: {fileID: 1971383404407482, guid: ddea98065966141da8707e0cdf0345e7,
     type: 2}
+  godPrefab: {fileID: 1346156167092816, guid: b0883627cdb554d13ac0a23610c27fbf, type: 2}
   canvasTransform: {fileID: 226693070}

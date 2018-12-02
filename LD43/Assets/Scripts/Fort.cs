@@ -4,13 +4,13 @@ using UnityEngine.UI;
 public class Fort {
 
     public float happiness;
-    Text happinessUI;
+    NumberUIElement happinessUI;
 
     public int amountOfPeople;
-    Text populationUI;
+    NumberUIElement populationUI;
 
     public float health;
-    Text healthUI;
+    NumberUIElement healthUI;
 
     int secondsPerPeople;
 
@@ -20,9 +20,9 @@ public class Fort {
         health = 1.0f;
         secondsPerPeople = 5;
 
-        happinessUI = UIManager.manager.GetUIText().GetComponent<Text>();
-        populationUI = UIManager.manager.GetUIText().GetComponent<Text>();
-        healthUI = UIManager.manager.GetUIText().GetComponent<Text>();
+        happinessUI = UIManager.manager.GetUIText().GetComponent<NumberUIElement>();
+        populationUI = UIManager.manager.GetUIText().GetComponent<NumberUIElement>();
+        healthUI = UIManager.manager.GetUIText().GetComponent<NumberUIElement>();
     }
 
     public void Update() {
@@ -41,9 +41,9 @@ public class Fort {
         else if (amountOfFood > 2*amountOfPeople)
             happiness += 0.01f;
 
-        happinessUI.text ="Happiness: " + happiness;
-        populationUI.text ="People: " + amountOfPeople;
-        healthUI.text ="Health: " + health;
+        happinessUI.ChangeLabel("Happiness: " + happiness);
+        populationUI.ChangeLabel("People: " + amountOfPeople);
+        healthUI.ChangeLabel("Health: " + health);
     }
 
     public void DoDamage(float damage) {
