@@ -5,8 +5,7 @@ public class War : IGodRole {
     God god;
 
     public void GoodAction() {
-        Debug.Log("Repairing Fort");
-        UIManager.manager.CreateAlert("We are blessed!", "Our fort walls have been strengthened by our War God!");
+        UIManager.manager.CreateAlert("We are Blessed!", "Our fort walls have been strengthened by our War God!");
         GameManager.manager.PlaySound(0);
         GameManager.manager.fort.health += 0.1f;
     }
