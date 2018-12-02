@@ -12,14 +12,12 @@ public class Fort {
     public float health;
     Text healthUI;
 
-    float happinessPerSecond;
     int secondsPerPeople;
 
     public Fort() {
         happiness = 0.5f;
         amountOfPeople = 500;
         health = 1.0f;
-        happinessPerSecond = -0.01f;
         secondsPerPeople = 5;
 
         happinessUI = UIManager.manager.GetUIText().GetComponent<Text>();
@@ -28,10 +26,13 @@ public class Fort {
     }
 
     public void Update() {
-        happiness += happinessPerSecond;
-
         if (((int)Time.time % secondsPerPeople) == 0)
             amountOfPeople++;
+
+        if (health > 0.7f)
+            happiness += 0.005f;
+        else if (health < 0.5f)
+            happiness -= 0.01f;
 
         happinessUI.text ="Happiness: " + happiness;
         populationUI.text ="People: " + amountOfPeople;
