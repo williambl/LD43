@@ -26,9 +26,6 @@ public class Fort {
     }
 
     public void Update() {
-        if (((int)Time.time % secondsPerPeople) == 0)
-            amountOfPeople++;
-
         if (health > 0.7f)
             happiness += 0.005f;
         else if (health < 0.5f)
@@ -36,10 +33,19 @@ public class Fort {
 
         int amountOfFood = GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount;
 
-        if (amountOfPeople > amountOfFood)
-            happiness -= 0.02f;
-        else if (amountOfFood > 2*amountOfPeople)
+        if (amountOfPeople > amountOfFood) {
+            happiness -= 0.2f;
+            amountOfPeople -= amountOfPeople-amountOfFood;
+        } else if (amountOfFood > 2*amountOfPeople) {
             happiness += 0.01f;
+
+            if (((int)Time.time % secondsPerPeople) == 0)
+                amountOfPeople = (int)(amountOfPeople * 1.25);
+        }
+        
+        amountOfPeople = Mathf.Max(0, amountOfPeople);
+        happiness = Mathf.Clamp(happiness, 0, 1);
+        health = Mathf.Clamp(health, 0, 1);
 
         happinessUI.ChangeLabel("Happiness: " + happiness);
         populationUI.ChangeLabel("People: " + amountOfPeople);

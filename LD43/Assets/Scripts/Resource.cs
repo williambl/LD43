@@ -20,6 +20,10 @@ public class Resource {
 
     public void Update () {
         amount += amountPerSecond;
+
+        if (amount < 0)
+            amount = 0;
         uiElement.ChangeLabel(name + ": " + amount);
+
     }
 }

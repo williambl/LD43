@@ -10,7 +10,7 @@ public class Resources {
     }
 
     void AddResources() {
-        resourceList.Add(new Resource("Food", 50, 1));
+        resourceList.Add(new Resource("Food", 50, 0));
     }
 
     public void Update() {
