@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour {
     public Fort fort;
     public Enemies enemies;
 
-    public List<Sprite> fortSprites = new List<Sprite>();
-    public Image fortImage;
+    public ParticleSystem smokeSystem;
+    public ParticleSystem fireSystem;
 
     public AudioSource audioSrc;
     public AudioClip goodEvent;
@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour {
         resources = new Resources();
         fort = new Fort();
         enemies = new Enemies();
+        
+        smokeSystem.Stop();
+        fireSystem.Stop();
+
         StartCoroutine(UpdateAllThings());
     }
 
@@ -45,21 +49,16 @@ public class GameManager : MonoBehaviour {
             gods.Update();
             enemies.Update();
 
+            if (fort.health < 0.6)
+                smokeSystem.Play();
+            else
+                smokeSystem.Stop();
+
+            if (fort.health < 0.4)
+                fireSystem.Play();
+            else
+                fireSystem.Stop();
             float health = fort.health;
-            if (health < 0.01f)
-                fortImage.sprite = fortSprites[0];
-            else if (health <= 0.1f)
-                fortImage.sprite = fortSprites[1];
-            else if (health <= 0.2f)
-                fortImage.sprite = fortSprites[2];
-            else if (health <= 0.4f)
-                fortImage.sprite = fortSprites[3];
-            else if (health <= 0.6f)
-                fortImage.sprite = fortSprites[4];
-            else if (health <= 0.8f)
-                fortImage.sprite = fortSprites[5];
-            else if (health <= 1.0f)
-                fortImage.sprite = fortSprites[6];
 
             yield return new WaitForSeconds(2.0f);
         }

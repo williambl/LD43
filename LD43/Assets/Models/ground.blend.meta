@@ -7,12 +7,18 @@ ModelImporter:
     400000: //RootNode
     2100000: unnamed
     2100002: Material_001
+    2100004: Ground
     2300000: //RootNode
     3300000: //RootNode
     4300000: Plane
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: 3575cdb6f22a345e982b1402ac6fb78d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
