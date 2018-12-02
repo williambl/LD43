@@ -40,7 +40,7 @@ public class God {
             role.GoodAction();
         }
 
-        uiElement.ChangeLabel(name + ": " + happiness);
+        uiElement.ChangeLabelAndBackground(name, happiness);
     }
 
     public void Sacrifice() {

@@ -23,7 +23,7 @@ public class Resource {
 
         if (amount < 0)
             amount = 0;
-        uiElement.ChangeLabel(name + ": " + amount);
+        uiElement.ChangeLabelAndBackground(name, amount/GameManager.manager.fort.amountOfPeople);
 
     }
 }

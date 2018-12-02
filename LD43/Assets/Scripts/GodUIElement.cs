@@ -7,12 +7,19 @@ public class GodUIElement : MonoBehaviour {
 
     public Text label;
     public Button sacrificeButton;
+    public Image background;
+
+    public Gradient gradient;
 
     God god;
 
-    public void ChangeLabel (string newLabel) {
-        label.text = newLabel;
+    void Start() {
         sacrificeButton.onClick.AddListener(Sacrifice);
+    }
+
+    public void ChangeLabelAndBackground (string newLabel, float backgroundColour) {
+        label.text = newLabel;
+        background.color = gradient.Evaluate(backgroundColour);
     }
 
     public void Sacrifice() {

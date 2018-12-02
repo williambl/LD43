@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class NumberUIElement : MonoBehaviour {
 
     public Text label;
+    public Image background;
 
-    public void ChangeLabel (string newLabel) {
+    public Gradient gradient;
+
+    public void ChangeLabelAndBackground (string newLabel, float backgroundColour) {
         label.text = newLabel;
+        background.color = gradient.Evaluate(backgroundColour);
     }
 }

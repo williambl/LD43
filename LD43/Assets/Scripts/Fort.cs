@@ -47,9 +47,9 @@ public class Fort {
         happiness = Mathf.Clamp(happiness, 0, 1);
         health = Mathf.Clamp(health, 0, 1);
 
-        happinessUI.ChangeLabel("Happiness: " + happiness);
-        populationUI.ChangeLabel("People: " + amountOfPeople);
-        healthUI.ChangeLabel("Health: " + health);
+        happinessUI.ChangeLabelAndBackground("Happiness: " + happiness, happiness);
+        populationUI.ChangeLabelAndBackground("People: " + amountOfPeople, amountOfPeople/1000);
+        healthUI.ChangeLabelAndBackground("Health: " + health, health);
     }
 
     public void DoDamage(float damage) {
