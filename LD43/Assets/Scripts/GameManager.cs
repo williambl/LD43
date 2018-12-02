@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour {
             else if (health <= 1.0f)
                 fortImage.sprite = fortSprites[6];
 
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(2.0f);
         }
     }
 
