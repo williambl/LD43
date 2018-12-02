@@ -56,9 +56,9 @@ public class Fort {
         if (health == 0)
             GameManager.manager.Lose("the fort collapsed. Perhaps you should have sacrificed to the War God?");
 
-        happinessUI.ChangeLabelAndBackground("Happiness: " + happiness, happiness);
-        populationUI.ChangeLabelAndBackground("People: " + amountOfPeople, amountOfPeople/500);
-        healthUI.ChangeLabelAndBackground("Health: " + health, health);
+        happinessUI.ChangeLabelAndBackground("Happiness\n" + Mathf.Round(happiness*100) + "%", happiness);
+        populationUI.ChangeLabelAndBackground("People\n" + amountOfPeople, amountOfPeople/500);
+        healthUI.ChangeLabelAndBackground("Fort Durability\n" + Mathf.Round(health) + "%", health);
     }
 
     public void DoDamage(float damage) {
