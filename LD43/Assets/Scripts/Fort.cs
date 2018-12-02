@@ -53,9 +53,15 @@ public class Fort {
     }
 
     public void DoDamage(float damage) {
-        if (damage > 20)
-            amountOfPeople -= Random.Range(1, 75);
+        int peopleLoss = 0;
+        if (damage > 20) {
+            peopleLoss = Random.Range(1, 75);
+            amountOfPeople -= peopleLoss;
+        }
         
-        health -= damage/(GameManager.manager.enemies.damageBase + 50);
+        float healthLoss = damage/(GameManager.manager.enemies.damageBase + 50);
+        health -= healthLoss;
+
+        UIManager.manager.CreateAlert("Attack!", "We've been attacked! The attackers did "+healthLoss+" damage to our fort and killed "+peopleLoss+" people!");
     }
 }
