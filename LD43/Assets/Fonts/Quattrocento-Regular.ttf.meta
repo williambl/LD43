@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: bb0899000348112e9a658fd0ed9d4318
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Quattrocento
+  fontNames:
+  - Quattrocento
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 66d5ff1c6fedd9c0390508de6cef6bb3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
