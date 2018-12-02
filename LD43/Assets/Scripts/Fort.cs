@@ -68,6 +68,11 @@ public class Fort {
         }
         
         float healthLoss = damage/(GameManager.manager.enemies.damageBase + 50);
+
+        healthLoss /= (GameManager.manager.gods.godList.Find(x => x.name == "War God").happiness)*2;
+        if (healthLoss < 0.1f)
+            healthLoss = 0.1f;
+
         health -= healthLoss;
 
         UIManager.manager.CreateAlert("Attack!", "We've been attacked! The attackers did "+healthLoss+" damage to our fort and killed "+peopleLoss+" people!");

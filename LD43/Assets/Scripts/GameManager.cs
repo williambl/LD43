@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator UpdateAllThings () {
         while (true) {
-            yield return new WaitForSeconds(1.0f);
             resources.Update();
             fort.Update();
             gods.Update();
@@ -55,6 +54,8 @@ public class GameManager : MonoBehaviour {
                 fortImage.sprite = fortSprites[5];
             else if (health <= 1.0f)
                 fortImage.sprite = fortSprites[6];
+
+            yield return new WaitForSeconds(5.0f);
         }
     }
 

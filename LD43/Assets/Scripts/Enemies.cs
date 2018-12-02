@@ -8,7 +8,8 @@ public class Enemies {
     float nextTime;
 
     public Enemies() {
-        damageBase = 10;
+        damageBase = 5;
+        cooldownBase = 5;
         nextTime = 10;
     }
 
