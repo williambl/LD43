@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour {
     public List<Sprite> fortSprites = new List<Sprite>();
     public Image fortImage;
 
+    public AudioSource audioSrc;
+    public AudioClip goodEvent;
+    public AudioClip badEvent;
+    public AudioClip loss;
+
     public static GameManager manager;
 
     void Awake () {
@@ -30,6 +35,7 @@ public class GameManager : MonoBehaviour {
     public void Lose (string reason) {
         StopAllCoroutines();
         UIManager.manager.Lose(reason);
+        PlaySound(2);
     }
 
     IEnumerator UpdateAllThings () {
@@ -56,6 +62,25 @@ public class GameManager : MonoBehaviour {
                 fortImage.sprite = fortSprites[6];
 
             yield return new WaitForSeconds(2.0f);
+        }
+    }
+
+    public void PlaySound (int soundType) {
+        switch (soundType) {
+            case 0:
+                audioSrc.clip = goodEvent;
+                audioSrc.Play();
+                break;
+            case 1:
+                audioSrc.clip = badEvent;
+                audioSrc.Play();
+                break;
+            case 2:
+                audioSrc.clip = loss;
+                audioSrc.Play();
+                break;
+            default:
+                break;
         }
     }
 

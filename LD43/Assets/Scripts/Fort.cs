@@ -37,6 +37,7 @@ public class Fort {
             happiness -= 0.2f;
             amountOfPeople -= amountOfPeople-amountOfFood;
             UIManager.manager.CreateAlert("Starvation!", "Many people have starved because we don't have enough food!");
+            GameManager.manager.PlaySound(1);
         } else if (amountOfFood > 2*amountOfPeople) {
             happiness += 0.1f;
 
@@ -76,5 +77,6 @@ public class Fort {
         health -= healthLoss;
 
         UIManager.manager.CreateAlert("Attack!", "We've been attacked! The attackers did "+healthLoss+" damage to our fort and killed "+peopleLoss+" people!");
+        GameManager.manager.PlaySound(1);
     }
 }
