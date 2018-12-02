@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(UpdateAllThings());
     }
 
+    public void Lose (string reason) {
+        StopAllCoroutines();
+        UIManager.manager.Lose(reason);
+    }
+
     IEnumerator UpdateAllThings () {
         while (true) {
             yield return new WaitForSeconds(1.0f);

@@ -39,4 +39,8 @@ public class UIManager : MonoBehaviour {
         var gObject = Instantiate(alertPrefab, canvasTransform);
         gObject.GetComponent<AlertUIElement>().SetContents(title, body);
     }
+
+    public void Lose(string reason) {
+        CreateAlert("Defeat!", "We have lost because "+reason);
+    }
 }

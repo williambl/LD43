@@ -47,6 +47,13 @@ public class Fort {
         happiness = Mathf.Clamp(happiness, 0, 1);
         health = Mathf.Clamp(health, 0, 1);
 
+        if (amountOfPeople == 0)
+            GameManager.manager.Lose("everybody died. Perhaps you should make sure you have enough food and a good enough fort?");
+        if (happiness == 0)
+            GameManager.manager.Lose("everybody got fed up and left. Perhaps try not doing as many human sacrifices?");
+        if (health == 0)
+            GameManager.manager.Lose("the fort collapsed. Perhaps you should have sacrificed to the War God?");
+
         happinessUI.ChangeLabelAndBackground("Happiness: " + happiness, happiness);
         populationUI.ChangeLabelAndBackground("People: " + amountOfPeople, amountOfPeople/500);
         healthUI.ChangeLabelAndBackground("Health: " + health, health);
