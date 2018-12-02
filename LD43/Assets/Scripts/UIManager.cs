@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
     public GameObject numberPrefab;
     public GameObject godPrefab;
+    public GameObject alertPrefab;
 
     public Transform canvasTransform;
 
@@ -31,5 +33,10 @@ public class UIManager : MonoBehaviour {
         gObject.transform.position -= Vector3.down * lastPosition;
 
         return gObject.GetComponent<GodUIElement>();
+    }
+
+    public void CreateAlert(string title, string body) {
+        var gObject = Instantiate(alertPrefab, canvasTransform);
+        gObject.GetComponent<AlertUIElement>().SetContents(title, body);
     }
 }

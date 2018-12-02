@@ -6,11 +6,12 @@ public class War : IGodRole {
 
     public void GoodAction() {
         Debug.Log("Repairing Fort");
+        UIManager.manager.CreateAlert("We are blessed!", "Our fort walls have been strengthened by our War God!");
         GameManager.manager.fort.health += 0.1f;
     }
 
     public void BadAction() {
-        Debug.Log("Increasing Enemy Strength");
+        UIManager.manager.CreateAlert("Disaster!", "The enemies' attacks have increased in strength! They must have divine favour!");
         GameManager.manager.enemies.damageBase += 5;
     }
 

@@ -5,11 +5,12 @@ public class Agriculture : IGodRole {
     God god;
 
     public void GoodAction() {
-        Debug.Log("Adding food");
+        UIManager.manager.CreateAlert("We are Blessed!", "Our harvest has gone spectacularly and we have gained much food!");
         GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount += (int)(GameManager.manager.fort.amountOfPeople * 0.15);
     }
 
     public void BadAction() {
+        UIManager.manager.CreateAlert("Disaster!", "Much of our food has spontaniously rotted!");
         GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount -= (int)(GameManager.manager.fort.amountOfPeople * 0.5);
     }
 

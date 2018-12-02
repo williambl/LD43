@@ -383,6 +383,8 @@ MonoBehaviour:
   numberPrefab: {fileID: 1971383404407482, guid: ddea98065966141da8707e0cdf0345e7,
     type: 2}
   godPrefab: {fileID: 1346156167092816, guid: b0883627cdb554d13ac0a23610c27fbf, type: 2}
+  alertPrefab: {fileID: 1604395984794300, guid: f109cc938f78446d4a4c646d3b143d09,
+    type: 2}
   canvasTransform: {fileID: 226693070}
 --- !u!1 &642147477
 GameObject:
