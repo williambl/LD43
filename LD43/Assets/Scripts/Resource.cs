@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class Resource {
 
-    string name;
+    public string name;
 
-    int amount;
+    public int amount;
 
     int amountPerSecond;
 

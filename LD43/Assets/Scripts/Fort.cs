@@ -34,6 +34,13 @@ public class Fort {
         else if (health < 0.5f)
             happiness -= 0.01f;
 
+        int amountOfFood = GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount;
+
+        if (amountOfPeople > amountOfFood)
+            happiness -= 0.02f;
+        else if (amountOfFood > 2*amountOfPeople)
+            happiness += 0.01f;
+
         happinessUI.text ="Happiness: " + happiness;
         populationUI.text ="People: " + amountOfPeople;
         healthUI.text ="Health: " + health;
