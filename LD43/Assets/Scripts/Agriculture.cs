@@ -1,8 +1,9 @@
-public class Agriculture : GodRole {
+using UnityEngine;
 
-    public Agriculture(string name) : base(name) {}
+public class Agriculture : IGodRole {
 
     public void GoodAction() {
+        Debug.Log("Adding food");
         GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount += (GameManager.manager.fort.amountOfPeople * 2);
     }
 

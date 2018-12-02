@@ -1,13 +1,7 @@
-public class GodRole {
+public interface IGodRole {
 
-    public string name;
+    void GoodAction();
 
-    public GodRole(string name) {
-        this.name = name;
-    }
-
-    public void GoodAction() {}
-
-    public void BadAction() {}
+    void BadAction();
 
 }

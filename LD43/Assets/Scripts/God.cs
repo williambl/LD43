@@ -10,9 +10,9 @@ public class God {
     float wrathModifier;
     float wrathCutoff;
     
-    public GodRole role;
+    public IGodRole role;
 
-    public God(string name, float happiness, float happinessPerSecond, float wrathModifier, float wrathCutoff, GodRole role) {
+    public God(string name, float happiness, float happinessPerSecond, float wrathModifier, float wrathCutoff, IGodRole role) {
         this.name = name;
         this.happiness = happiness;
         this.happinessPerSecond = happinessPerSecond;
