@@ -1,6 +1,6 @@
 public class GodRole {
 
-    string name;
+    public string name;
 
     public GodRole(string name) {
         this.name = name;
