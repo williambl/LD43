@@ -12,6 +12,8 @@ public class God {
     
     public IGodRole role;
 
+    GodUIElement uiElement;
+
     public God(string name, float happiness, float happinessPerSecond, float wrathModifier, float wrathCutoff, IGodRole role) {
         this.name = name;
         this.happiness = happiness;
@@ -19,6 +21,8 @@ public class God {
         this.wrathModifier = wrathModifier;
         this.wrathCutoff = wrathCutoff;
         this.role = role;
+
+        uiElement = UIManager.manager.CreateGodUIElement();
     }
 
     public void Update() {
@@ -32,6 +36,8 @@ public class God {
             Debug.Log("A god is pleased with you.");
             role.GoodAction();
         }
+
+        uiElement.ChangeLabel(name + ": " + happiness);
     }
 
 }
