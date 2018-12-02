@@ -15,6 +15,7 @@ public class Agriculture : IGodRole {
 
     public void Sacrifice() {
         GameManager.manager.fort.amountOfPeople -= 25;
+        GameManager.manager.fort.happiness -= 0.5f;
         god.happiness += 0.5f;
     }
 
