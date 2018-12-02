@@ -9,8 +9,8 @@ public class Gods {
     }
 
     void AddGods() {
-        godList.Add(new God("Agriculture God", 1, -0.01f, 0.4f, 0.6f, new Agriculture()));
-        godList.Add(new God("War God", 1, -0.01f, 0.1f, 0.6f, new War()));
+        godList.Add(new God("Agriculture God", 1, -0.01f, 0.8f, 0.6f, new Agriculture()));
+        godList.Add(new God("War God", 1, -0.01f, 0.8f, 0.6f, new War()));
     }
 
     public void Update() {

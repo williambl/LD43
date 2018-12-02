@@ -16,7 +16,7 @@ public class War : IGodRole {
     }
 
     public void Sacrifice() {
-        GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount -= 100;
+        GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount -= 10;
         god.happiness += 0.5f;
     }
 

@@ -32,7 +32,7 @@ public class God {
         happiness += happinessPerSecond * Random.Range(0.5f, 2.5f);
 
         Debug.Log(happiness);
-        if (happiness < wrathCutoff && Random.value < wrathModifier) {
+        if (happiness < wrathCutoff && Random.value+0.1 > wrathModifier) {
             Debug.Log("YOU HAVE ANGERED A GOD");
             role.BadAction();
         } else if (happiness > wrathCutoff && Random.value > wrathModifier) {
