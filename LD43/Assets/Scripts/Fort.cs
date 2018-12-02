@@ -48,7 +48,7 @@ public class Fort {
         health = Mathf.Clamp(health, 0, 1);
 
         happinessUI.ChangeLabelAndBackground("Happiness: " + happiness, happiness);
-        populationUI.ChangeLabelAndBackground("People: " + amountOfPeople, amountOfPeople/1000);
+        populationUI.ChangeLabelAndBackground("People: " + amountOfPeople, amountOfPeople/500);
         healthUI.ChangeLabelAndBackground("Health: " + health, health);
     }
 
