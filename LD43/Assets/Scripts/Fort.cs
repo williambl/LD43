@@ -27,17 +27,18 @@ public class Fort {
 
     public void Update() {
         if (health > 0.7f)
-            happiness += 0.005f;
+            happiness += 0.02f;
         else if (health < 0.5f)
-            happiness -= 0.01f;
+            happiness -= 0.02f;
 
         int amountOfFood = GameManager.manager.resources.resourceList.Find(x => x.name == "Food").amount;
 
         if (amountOfPeople > amountOfFood) {
             happiness -= 0.2f;
             amountOfPeople -= amountOfPeople-amountOfFood;
+            UIManager.manager.CreateAlert("Starvation!", "Many people have starved because we don't have enough food!");
         } else if (amountOfFood > 2*amountOfPeople) {
-            happiness += 0.01f;
+            happiness += 0.1f;
 
             if (((int)Time.time % secondsPerPeople) == 0)
                 amountOfPeople = (int)(amountOfPeople * 1.25);

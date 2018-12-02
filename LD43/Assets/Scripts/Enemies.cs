@@ -8,7 +8,8 @@ public class Enemies {
     float nextTime;
 
     public Enemies() {
-    
+        damageBase = 10;
+        nextTime = 10;
     }
 
     public void Update() {
