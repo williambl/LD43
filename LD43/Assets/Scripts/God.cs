@@ -26,7 +26,7 @@ public class God {
     }
 
     public void Update() {
-        happiness += happinessPerSecond;
+        happiness += happinessPerSecond * Random.Range(0.5f, 2.5f);
 
         Debug.Log(happiness);
         if (happiness < wrathCutoff && Random.value < wrathModifier) {
