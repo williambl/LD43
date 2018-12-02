@@ -23,6 +23,9 @@ public class God {
         this.role = role;
 
         uiElement = UIManager.manager.CreateGodUIElement();
+        
+        uiElement.SetGod(this);
+        this.role.SetGod(this);
     }
 
     public void Update() {
@@ -38,6 +41,10 @@ public class God {
         }
 
         uiElement.ChangeLabel(name + ": " + happiness);
+    }
+
+    public void Sacrifice() {
+        role.Sacrifice();
     }
 
 }

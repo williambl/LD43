@@ -4,4 +4,7 @@ public interface IGodRole {
 
     void BadAction();
 
+    void Sacrifice();
+
+    void SetGod(God god);
 }
